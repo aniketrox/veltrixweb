@@ -35,12 +35,12 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Services</h4>
+            <h4 className="font-bold mb-6">Solutions</h4>
             <ul className="space-y-4 text-muted-foreground">
-              <li><Link to="/services" className="hover:text-primary transition-colors">Web Development</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">AI Chatbots</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Agentic AI</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">UI/UX Design</Link></li>
+              <li><Link to="/solutions" className="hover:text-primary transition-colors">E-commerce</Link></li>
+              <li><Link to="/solutions" className="hover:text-primary transition-colors">SaaS Platforms</Link></li>
+              <li><Link to="/solutions" className="hover:text-primary transition-colors">Enterprise Apps</Link></li>
+              <li><Link to="/solutions" className="hover:text-primary transition-colors">Custom CMS</Link></li>
             </ul>
           </div>
 
@@ -48,8 +48,8 @@ const Footer = () => {
             <h4 className="font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-muted-foreground">
               <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/about" className="hover:text-primary transition-colors">Our Process</Link></li>
               <li><Link to="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
               <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
