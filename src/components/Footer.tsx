@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Cpu, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -36,20 +37,20 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-6">Services</h4>
             <ul className="space-y-4 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Web Development</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">AI Chatbots</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Agentic AI</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">UI/UX Design</a></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Web Development</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">AI Chatbots</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Agentic AI</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">UI/UX Design</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Our Process</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">Our Process</Link></li>
+              <li><Link to="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
