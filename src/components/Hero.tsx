@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Bot, Globe } from 'lucide-react';
+import { ArrowRight, Sparkles, Bot, Globe, Cpu } from 'lucide-react';
 
 const Hero = () => {
   return (
