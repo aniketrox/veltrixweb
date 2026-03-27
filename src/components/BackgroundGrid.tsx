@@ -21,11 +21,11 @@ const BackgroundGrid = () => {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-20"
+        className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
       />
 
       {/* Floating Particles */}
-      {[...Array(20)].map((_, i) => (
+      {[...Array(30)].map((_, i) => (
         <motion.div
           key={i}
           initial={{ 
