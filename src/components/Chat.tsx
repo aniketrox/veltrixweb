@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Toaster } from '@/components/ui/toast';
+import { showError } from '@/utils/toast';
 import { SupabaseClient } from '@/lib/supabase';
 import { ChatMessage } from '@/types';
 
@@ -13,7 +13,6 @@ const Chat = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Simulate initial loading
     setTimeout(() => {
       addMessage({ text: 'Hello! How can I help you today?', isUser: false });
     }, 1000);
@@ -41,17 +40,13 @@ const Chat = () => {
         user: 'user123',
       });
 
-      if (response.data) {
-        addMessage({
-          text: response.data.message,
-          isUser: false,
-          timestamp: new Date().toISOString(),
-        });
-      } else {
-        Toaster.error('Failed to send message');
-      }
+      addMessage({
+        text: response.message,
+        isUser: false,
+        timestamp: new Date().toISOString(),
+      });
     } catch (error) {
-      Toaster.error('Error sending message');
+      showError('Error sending message');
     } finally {
       setLoading(false);
       setInput('');

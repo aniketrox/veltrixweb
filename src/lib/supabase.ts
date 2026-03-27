@@ -1,11 +1,23 @@
 "use client";
 
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient as SupabaseClientType } from '@supabase/supabase-js';
+import { chat } from './chat';
 
-const supabaseClient = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export const supabase = supabaseClient;
-export const supabaseClient = supabaseClient;
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('Missing Supabase environment variables. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env file.');
+}
+
+const supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
+
+interface SupabaseWithChat extends SupabaseClientType {
+  chat: typeof chat;
+}
+
+const supabaseWithChat = supabaseInstance as SupabaseWithChat;
+supabaseWithChat.chat = chat;
+
+export const supabase = supabaseWithChat;
+export const SupabaseClient = supabaseWithChat;
