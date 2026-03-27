@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ContactForm from '@/components/ContactForm';
+import Chat from '@/components/Chat';
 
 const ContactPage = () => {
   return (
@@ -11,6 +11,7 @@ const ContactPage = () => {
       <Navbar />
       <main className="pt-16">
         <ContactForm />
+        <Chat />
       </main>
       <Footer />
     </div>
