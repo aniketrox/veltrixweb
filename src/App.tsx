@@ -16,8 +16,6 @@ import ContactPage from "./pages/Contact";
 import CareersPage from "./pages/Careers";
 import TestimonialsPage from "./pages/Testimonials";
 import NotFound from "./pages/NotFound";
-import TermsOfService from "./pages/TermsOfService";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -52,8 +50,6 @@ const App = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

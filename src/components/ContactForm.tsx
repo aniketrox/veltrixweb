@@ -32,7 +32,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email us at</p>
-                  <p className="font-medium">hello@veltrixweb.online</p>
+                  <p className="font-medium">hello@veltrixweb.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -41,7 +41,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Call us</p>
-                  <p className="font-medium">+91 8116531479</p>
+                  <p className="font-medium">+1 (555) 000-0000</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -50,7 +50,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Visit us</p>
-                  <p className="font-medium">Haldia, West Bengal</p>
+                  <p className="font-medium">Silicon Valley, CA</p>
                 </div>
               </div>
             </div>
@@ -66,11 +66,11 @@ const ContactForm = () => {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Name</label>
-                  <Input placeholder="Anil Kumar" className="bg-white/5 border-white/10 rounded-xl h-12" required />
+                  <Input placeholder="John Doe" className="bg-white/5 border-white/10 rounded-xl h-12" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Email</label>
-                  <Input type="email" placeholder="anil@example.com" className="bg-white/5 border-white/10 rounded-xl h-12" required />
+                  <Input type="email" placeholder="john@example.com" className="bg-white/5 border-white/10 rounded-xl h-12" required />
                 </div>
               </div>
               <div className="space-y-2">

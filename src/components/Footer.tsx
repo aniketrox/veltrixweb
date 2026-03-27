@@ -53,8 +53,8 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} VeltrixWeb. All rights reserved.</p>
           <div className="flex gap-8">
-            <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
