@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Bot, Globe, Cpu } from 'lucide-react';
 import BackgroundGrid from './BackgroundGrid';
-import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Hero = () => {
   const containerVariants = {
@@ -84,14 +83,6 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-          {/* Neon Glow Effect */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1.5 }}
-            className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          />
-
           {/* Floating Icons Decoration */}
           <motion.div 
             variants={itemVariants}
@@ -119,8 +110,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      <MadeWithDyad />
     </section>
   );
 };
