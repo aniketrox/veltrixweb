@@ -9,30 +9,30 @@ import { Button } from '@/components/ui/button';
 
 const jobs = [
   {
-    title: "Senior AI Engineer",
+    title: "AI Engineer Intern",
     department: "Engineering",
-    location: "Remote / Silicon Valley",
+    location: "Remote / Kolkata",
     type: "Full-time",
     description: "Lead the development of our next-generation agentic AI systems and LLM integrations."
   },
   {
-    title: "Full Stack Developer",
+    title: "Full Stack Developer Intern",
     department: "Engineering",
     location: "Remote",
     type: "Full-time",
     description: "Build beautiful, high-performance web applications using React, TypeScript, and Node.js."
   },
   {
-    title: "UI/UX Designer",
+    title: "UI/UX Designer Intern",
     department: "Design",
     location: "Remote",
     type: "Full-time",
     description: "Create intuitive and stunning digital experiences for our web and AI platforms."
   },
   {
-    title: "AI Solutions Consultant",
+    title: "AI Consultant Intern",
     department: "Sales",
-    location: "Silicon Valley",
+    location: "Kolkata",
     type: "Full-time",
     description: "Help clients understand and implement cutting-edge AI solutions for their business."
   }
