@@ -16,7 +16,6 @@ import ContactPage from "./pages/Contact";
 import CareersPage from "./pages/Careers";
 import TestimonialsPage from "./pages/Testimonials";
 import NotFound from "./pages/NotFound";
-import ChatbotWidget from "./components/ChatbotWidget";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +38,6 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <ChatbotWidget />
         <Toaster />
         <Sonner />
         <BrowserRouter>
