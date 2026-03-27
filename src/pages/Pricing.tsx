@@ -10,14 +10,14 @@ import { Button } from '@/components/ui/button';
 const plans = [
   {
     name: "Starter",
-    price: "₹3999",
+    price: "$999",
     description: "Perfect for small businesses looking to establish a presence.",
     features: ["Responsive Landing Page", "Basic SEO Optimization", "Contact Form Integration", "1 Month Support"],
     highlight: false
   },
   {
     name: "Professional",
-    price: "₹7999",
+    price: "$2,499",
     description: "Ideal for growing companies needing advanced features.",
     features: ["Multi-page Website", "Custom AI Chatbot", "Performance Optimization", "3 Months Support", "Analytics Dashboard"],
     highlight: true

@@ -5,7 +5,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Star, Quote, User, Building, Globe, Brain } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const testimonials = [
   {
@@ -177,8 +176,7 @@ const TestimonialsPage = () => {
               their digital presence with our cutting-edge solutions.
             </p>
             <button className="bg-primary text-white px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transition-colors">
-              <Link to="/contact">
-              Start Your Project Today</Link>
+              Start Your Project Today
             </button>
           </motion.div>
         </div>
