@@ -11,11 +11,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  // Add Work to the navigation links
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Solutions", path: "/solutions" },
     { name: "Services", path: "/services" },
     { name: "About", path: "/about" },
+    { name: "Work", path: "/work" }, // <-- Added Work link
     { name: "Pricing", path: "/pricing" },
     { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
