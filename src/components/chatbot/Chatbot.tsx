@@ -25,7 +25,7 @@ const Chatbot = () => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed bottom-8 right-8 z-50 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-white/10 flex flex-col"
+      className="fixed bottom-8 right-8 z-[9999] bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-white/10 flex flex-col"
     >
       <div className="p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">

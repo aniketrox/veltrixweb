@@ -16,6 +16,7 @@ import ContactPage from "./pages/Contact";
 import CareersPage from "./pages/Careers";
 import TestimonialsPage from "./pages/Testimonials";
 import NotFound from "./pages/NotFound";
+import Chatbot from "./components/chatbot/Chatbot";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
+      <Chatbot />
     </QueryClientProvider>
   );
 };
