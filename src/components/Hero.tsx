@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Bot, Globe, Cpu } from 'lucide-react';
 import BackgroundGrid from './BackgroundGrid';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const containerVariants = {
@@ -70,16 +71,19 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button size="lg" className="rounded-full px-8 h-14 text-lg group relative overflow-hidden">
-              <span className="relative z-10 flex items-center">
+              <Link to="/contact" className="relative z-10 flex items-center">
                 Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
+              </Link>
               <motion.div 
                 className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"
               />
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-lg border-white/10 hover:bg-white/5 backdrop-blur-sm">
-              View Our Work
+              <Link to="/testimonials" className="flex items-center gap-2">
+                View Our Work
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </Button>
           </motion.div>
 
