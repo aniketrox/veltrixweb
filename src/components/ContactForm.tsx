@@ -32,7 +32,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email us at</p>
-                  <p className="font-medium">hello@veltrixweb.com</p>
+                  <p className="font-medium">admin.veltrixweb@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -41,7 +41,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Call us</p>
-                  <p className="font-medium">+1 (555) 000-0000</p>
+                  <p className="font-medium">+91 8116531479</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -50,7 +50,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Visit us</p>
-                  <p className="font-medium">Silicon Valley, CA</p>
+                  <p className="font-medium">Haldia, India</p>
                 </div>
               </div>
             </div>
