@@ -14,6 +14,11 @@ interface SolutionCardProps {
 }
 
 const SolutionCard = ({ title, description, icon: Icon, features, delay }: SolutionCardProps) => {
+  const getWhatsAppLink = (solutionTitle: string) => {
+    const message = encodeURIComponent(`Hi VeltrixWeb, I'd like to learn more about your ${solutionTitle} solution.`);
+    return `https://wa.me/916290800308?text=${message}`;
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -40,10 +45,17 @@ const SolutionCard = ({ title, description, icon: Icon, features, delay }: Solut
         ))}
       </ul>
       
-      <Button variant="ghost" className="w-full justify-between group/btn hover:bg-primary/10 rounded-xl">
-        Learn More
-        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-      </Button>
+      <a 
+        href={getWhatsAppLink(title)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full"
+      >
+        <Button variant="ghost" className="w-full justify-between group/btn hover:bg-primary/10 rounded-xl">
+          Learn More
+          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+        </Button>
+      </a>
     </motion.div>
   );
 };
