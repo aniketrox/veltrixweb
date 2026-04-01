@@ -10,14 +10,14 @@ import { Button } from '@/components/ui/button';
 const plans = [
   {
     name: "Starter",
-    price: "$999",
+    price: "₹7,999",
     description: "Perfect for small businesses looking to establish a presence.",
     features: ["Responsive Landing Page", "Basic SEO Optimization", "Contact Form Integration", "1 Month Support"],
     highlight: false
   },
   {
     name: "Professional",
-    price: "$2,499",
+    price: "₹15,999",
     description: "Ideal for growing companies needing advanced features.",
     features: ["Multi-page Website", "Custom AI Chatbot", "Performance Optimization", "3 Months Support", "Analytics Dashboard"],
     highlight: true
@@ -32,6 +32,11 @@ const plans = [
 ];
 
 const PricingPage = () => {
+  const getWhatsAppLink = (planName: string) => {
+    const message = encodeURIComponent(`Hi VeltrixWeb, I'm interested in the ${planName} plan. Can we discuss this further?`);
+    return `https://wa.me/916290800308?text=${message}`;
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -57,7 +62,7 @@ const PricingPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`p-8 rounded-3xl border ${plan.highlight ? 'border-primary bg-primary/5 shadow-[0_0_30px_-10px_rgba(var(--primary),0.3)]' : 'border-white/5 bg-card'} relative overflow-hidden`}
+                className={`p-8 rounded-3xl border ${plan.highlight ? 'border-primary bg-primary/5 shadow-[0_0_30px_-10px_rgba(var(--primary),0.3)]' : 'border-white/5 bg-card'} relative overflow-hidden flex flex-col`}
               >
                 {plan.highlight && (
                   <div className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
@@ -67,7 +72,7 @@ const PricingPage = () => {
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <div className="text-4xl font-bold mb-4">{plan.price}</div>
                 <p className="text-muted-foreground mb-8 text-sm">{plan.description}</p>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm">
                       <Check className="w-4 h-4 text-primary" />
@@ -75,9 +80,16 @@ const PricingPage = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className={`w-full rounded-xl h-12 ${plan.highlight ? '' : 'variant-outline'}`}>
-                  Get Started
-                </Button>
+                <a 
+                  href={getWhatsAppLink(plan.name)} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <Button className={`w-full rounded-xl h-12 ${plan.highlight ? '' : 'variant-outline'}`}>
+                    Get Started
+                  </Button>
+                </a>
               </motion.div>
             ))}
           </div>
