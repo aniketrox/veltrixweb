@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Check, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const plans = [
   {
@@ -17,7 +18,7 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "6,999",
+    price: "₹6,999",
     description: "Ideal for growing companies needing advanced features.",
     features: ["Responsive Landing Page","Free Hosting", "upto 11 pages free","Premium Animations","Premium Animations", "Social Media Integration", "Whatsapp Automation and Integration","Google Map Integration", "Contact form Integration (upto 2)", "Performance Optimization", "3 Months technical Support", "free domain for 1 year (.net.in, .org.in)","Premium SEO Optimization", "Call Button Integration"],
     highlight: true
@@ -32,9 +33,15 @@ const plans = [
 ];
 
 const PricingPage = () => {
-  const getWhatsAppLink = (planName: string) => {
-    const message = encodeURIComponent(`Hi VeltrixWeb, I'm interested in the ${planName} plan. Can we discuss this further?`);
-    return `https://wa.me/916290800308?text=${message}`;
+  const navigate = useNavigate();
+
+  const handlePlanSelect = (plan: any) => {
+    if (plan.name === "Enterprise") {
+      const message = encodeURIComponent(`Hi VeltrixWeb, I'm interested in the Enterprise plan. Can we discuss this further?`);
+      window.open(`https://wa.me/916290800308?text=${message}`, '_blank');
+    } else {
+      navigate('/payment', { state: { plan } });
+    }
   };
 
   return (
@@ -80,16 +87,12 @@ const PricingPage = () => {
                     </li>
                   ))}
                 </ul>
-                <a 
-                  href={getWhatsAppLink(plan.name)} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full"
+                <Button 
+                  onClick={() => handlePlanSelect(plan)}
+                  className={`w-full rounded-xl h-12 ${plan.highlight ? '' : 'variant-outline'}`}
                 >
-                  <Button className={`w-full rounded-xl h-12 ${plan.highlight ? '' : 'variant-outline'}`}>
-                    Get Started
-                  </Button>
-                </a>
+                  Get Started
+                </Button>
               </motion.div>
             ))}
           </div>
