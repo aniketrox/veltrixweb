@@ -10,23 +10,23 @@ import { Button } from '@/components/ui/button';
 const plans = [
   {
     name: "Starter",
-    price: "₹7,999",
+    price: "₹3,999",
     description: "Perfect for small businesses looking to establish a presence.",
-    features: ["Responsive Landing Page", "Basic SEO Optimization", "Contact Form Integration", "1 Month Support"],
+    features: ["Responsive Landing Page", "Basic SEO Optimization", "Free Hosting" ,"upto 5 pages free", "1 Month Technical Support", "Premium Animations", "Social Media Integration", "Whatsapp Automation and Integration","Google Map Integration", "Call Button Integration"],
     highlight: false
   },
   {
     name: "Professional",
-    price: "₹15,999",
+    price: "6,999",
     description: "Ideal for growing companies needing advanced features.",
-    features: ["Multi-page Website", "Custom AI Chatbot", "Performance Optimization", "3 Months Support", "Analytics Dashboard"],
+    features: ["Responsive Landing Page","Free Hosting", "upto 11 pages free","Premium Animations","Premium Animations", "Social Media Integration", "Whatsapp Automation and Integration","Google Map Integration", "Contact form Integration (upto 2)", "Performance Optimization", "3 Months technical Support", "free domain for 1 year (.net.in, .org.in)","Premium SEO Optimization", "Call Button Integration"],
     highlight: true
   },
   {
     name: "Enterprise",
     price: "Custom",
     description: "Full-scale solutions for large organizations.",
-    features: ["Agentic AI Integration", "Custom Software Dev", "Priority 24/7 Support", "Dedicated Project Manager", "Security Audit"],
+    features: ["All professional facilities", "Agentic AI Integration", "Custom Software Dev", "Priority 24/7 Support", "Dedicated Project Manager", "Security Audit"],
     highlight: false
   }
 ];
