@@ -12,7 +12,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Clock, ShieldCheck, AlertCircle } from 'lucide-react';
 import { showError } from '@/utils/toast';
 
-// ✅ IMPORT QR IMAGES (IMPORTANT FIX)
+// ✅ QR IMPORTS
 import qr3999 from "@/assets/qr_3999.png";
 import qr6999 from "@/assets/qr_6999.png";
 
@@ -22,6 +22,8 @@ const PaymentPage = () => {
   const { plan } = location.state || {};
 
   const [timeLeft, setTimeLeft] = useState(300);
+  const [loading, setLoading] = useState(false); // ✅ NEW
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -59,10 +61,14 @@ const PaymentPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (loading) return; // 🔒 prevent multiple clicks
+
     if (!formData.consent) {
       showError("Please confirm the consent checkbox.");
       return;
     }
+
+    setLoading(true); // 🔥 disable button
 
     try {
       const SCRIPT_URL =
@@ -70,7 +76,7 @@ const PaymentPage = () => {
 
       await fetch(SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors', // IMPORTANT for Apps Script
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -83,16 +89,15 @@ const PaymentPage = () => {
         }),
       });
 
-      // Direct success (no-cors won't return response)
       navigate('/confirmation');
 
     } catch (error) {
       console.error(error);
       showError("Something went wrong. Please try again.");
+      setLoading(false); // 🔁 re-enable on error
     }
   };
 
-  // ✅ QR IMAGE (FIXED)
   const qrImage = plan?.name === "Starter" ? qr3999 : qr6999;
 
   return (
@@ -213,8 +218,13 @@ const PaymentPage = () => {
                   </span>
                 </div>
 
-                <Button type="submit" className="w-full h-12">
-                  Submit Payment Details
+                {/* ✅ BUTTON WITH LOADING STATE */}
+                <Button
+                  type="submit"
+                  className="w-full h-12"
+                  disabled={loading}
+                >
+                  {loading ? "Processing..." : "Submit Payment Details"}
                 </Button>
 
               </form>
