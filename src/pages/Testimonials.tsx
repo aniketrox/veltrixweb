@@ -4,18 +4,19 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { Star, Quote, User, Building, Globe, Brain } from 'lucide-react';
+import { Star, Quote, User, Building, Globe, Brain, ExternalLink } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Inc.",
-    company: "Silicon Valley",
-    content: "VeltrixWeb transformed our digital presence completely. The AI chatbot they built handles 80% of our customer support inquiries, saving us thousands monthly. Their attention to detail and technical expertise is unmatched.",
+    name: "MD Wasim",
+    role: "Manager & Founder",
+    company: "Jui Nila Publication",
+    content: "The website was created beautifully and professionally, exactly the way I wanted. The design is clean, user-friendly, and perfect for showcasing and selling books. The developer understood my requirements very well and delivered everything on time with great attention to detail. I highly recommend their services to anyone looking for a high-quality website. Thank you for your excellent work!",
     rating: 5,
-    project: "AI Chatbot Integration",
+    project: "juinila.in - Book Publishing and selling Webapp",
     icon: Brain,
-    delay: 0.1
+    delay: 0.1,
+    url: "https://www.juinila.in/"
   },
   {
     name: "Michael Chen",
@@ -25,7 +26,8 @@ const testimonials = [
     rating: 5,
     project: "E-commerce Platform",
     icon: Globe,
-    delay: 0.2
+    delay: 0.2,
+    url: "https://ecommerceplus.io"
   },
   {
     name: "Emily Rodriguez",
@@ -35,7 +37,8 @@ const testimonials = [
     rating: 5,
     project: "Agentic AI System",
     icon: Building,
-    delay: 0.3
+    delay: 0.3,
+    url: "https://globalsolutions.net"
   },
   {
     name: "David Kim",
@@ -45,7 +48,8 @@ const testimonials = [
     rating: 5,
     project: "Custom SaaS Platform",
     icon: Globe,
-    delay: 0.4
+    delay: 0.4,
+    url: "https://innovatetech.ai"
   }
 ];
 
@@ -76,7 +80,7 @@ const TestimonialsPage = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-primary mb-2">150+</div>
+              <div className="text-4xl font-bold text-primary mb-2">30+</div>
               <p className="text-sm text-muted-foreground">Projects Completed</p>
             </motion.div>
             <motion.div
@@ -106,7 +110,7 @@ const TestimonialsPage = () => {
               transition={{ delay: 0.3 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-primary mb-2">50+</div>
+              <div className="text-4xl font-bold text-primary mb-2">3+</div>
               <p className="text-sm text-muted-foreground">Countries Served</p>
             </motion.div>
           </div>
@@ -114,20 +118,28 @@ const TestimonialsPage = () => {
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-24">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <motion.a
                 key={index}
+                href={testimonial.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: testimonial.delay }}
-                className="group p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-all duration-500"
+                className="group block p-8 rounded-[2.5rem] bg-card border border-white/5 hover:border-primary/30 hover:bg-primary/[0.02] transition-all duration-500 relative overflow-hidden"
               >
+                {/* Hover Indicator */}
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ExternalLink className="w-5 h-5 text-primary" />
+                </div>
+
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
                     <testimonial.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg">{testimonial.name}</h3>
+                    <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{testimonial.name}</h3>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     <p className="text-xs text-muted-foreground">{testimonial.company}</p>
                   </div>
@@ -148,7 +160,7 @@ const TestimonialsPage = () => {
 
                 <div className="relative mb-6">
                   <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
-                  <p className="text-muted-foreground leading-relaxed pl-6">
+                  <p className="text-muted-foreground leading-relaxed pl-6 group-hover:text-foreground/90 transition-colors">
                     {testimonial.content}
                   </p>
                 </div>
@@ -159,7 +171,7 @@ const TestimonialsPage = () => {
                   </span>
                   <User className="w-4 h-4 text-muted-foreground" />
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 
