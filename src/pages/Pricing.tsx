@@ -11,14 +11,14 @@ import { useNavigate } from 'react-router-dom';
 const plans = [
   {
     name: "Starter",
-    price: "₹3,999",
+    price: "₹3,499",
     description: "Perfect for small businesses looking to establish a presence.",
     features: ["Responsive Landing Page", "Basic SEO Optimization", "Free Hosting" ,"upto 5 pages free", "1 Month Technical Support", "Premium Animations", "Social Media Integration", "Whatsapp Automation and Integration","Google Map Integration", "Call Button Integration"],
     highlight: false
   },
   {
     name: "Professional",
-    price: "₹6,999",
+    price: "₹6,499",
     description: "Ideal for growing companies needing advanced features.",
     features: ["Responsive Landing Page","Free Hosting", "upto 11 pages free","Premium Animations","Premium Animations", "Social Media Integration", "Whatsapp Automation and Integration","Google Map Integration", "Contact form Integration (upto 2)", "Performance Optimization", "3 Months technical Support", "free domain for 1 year (.net.in, .org.in)","Premium SEO Optimization", "Call Button Integration"],
     highlight: true
